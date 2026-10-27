@@ -1,0 +1,48 @@
+:root { 
+    --primary-button-color: #1F2234;
+    --primary-text-button-color: #FFF8F8;
+
+    --button-max-width: 370px;
+    --button-max-height: 41px; 
+}
+
+.button-primary { 
+    /**
+     * Button primary
+     */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /**
+     * Button size
+     */
+    max-width: var(--button-max-width);
+    max-height: var(--button-max-height);
+    height: 41px;
+    width: 310px;
+
+    /**
+     * Button color
+     */
+    background-color: var(--primary-button-color);
+    color: var(--primary-text-button-color);
+
+    /**
+     * Button style setting
+     */
+     border: 1px solid var(--primary-button-color);
+     border-radius: 8px;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    
+    /**
+     * Center div
+     */
+    height: 90vh;
+}

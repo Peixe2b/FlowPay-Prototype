@@ -1,0 +1,16 @@
+{
+  "name": "flowpay",
+  "version": "1.0.0",
+  "description": "Prototype for Flowpay system",
+  "license": "MIT",
+  "author": "Noma Foundation",
+  "type": "module",
+  "main": "main.js",
+  "scripts": {
+    "test": "vitest"
+  },
+  "devDependencies": {
+    "vite": "^8.3.5",
+    "vitest": "^5.0.5"
+  }
+}
