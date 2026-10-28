@@ -9,6 +9,9 @@
     --button-max-height: 41px; 
 }
 
+/**
+ Body styles | Global settings
+ */
 body { 
     margin: 0;
     padding: 0;
@@ -21,7 +24,27 @@ body {
 }
 
 #hello { 
-    font-family: "Roboto";
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#hello h3 { 
+    margin: 4px 4px 
+}
+
+#user-input {
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: flex-start;
+}
+
+#user-input input { 
+    width: 310px;
+    height: var(--button-max-height);
+    margin-bottom: 16px;
 }
 
 .button-primary { 
@@ -65,8 +88,4 @@ body {
      * Center div
      */
     height: 90vh;
-}
-
-.form-style { 
-    margin: 12px 8px;
 }
