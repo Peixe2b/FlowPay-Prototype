@@ -1,9 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 :root { 
     --primary-button-color: #1F2234;
     --primary-text-button-color: #FFF8F8;
+    --background-color: #FFFFFF;
 
     --button-max-width: 370px;
     --button-max-height: 41px; 
+}
+
+body { 
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+
+    /**
+     * Change font
+     */
+    font-family: "Roboto", sans-serif;
+}
+
+#hello { 
+    font-family: "Roboto";
 }
 
 .button-primary { 
@@ -31,8 +49,10 @@
     /**
      * Button style setting
      */
-     border: 1px solid var(--primary-button-color);
-     border-radius: 8px;
+    border: 1px solid var(--primary-button-color);
+    border-radius: 8px;
+
+    font-weight: 600;
 }
 
 .main-container {
@@ -45,4 +65,8 @@
      * Center div
      */
     height: 90vh;
+}
+
+.form-style { 
+    margin: 12px 8px;
 }
