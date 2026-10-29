@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap');
+
+:root {
+    color-scheme: light;
+    --primary-button-color: #1f2234;
+    --primary-text-button-color: #fff8f8;
+    --background-color: #fff;
+    --surface-placeholder: #d9d9d9;
+    --content-max-width: 1200px;
+    --page-gutter: clamp(16px, 4vw, 40px);
+    --action-bottom-space: max(24px, env(safe-area-inset-bottom));
+    --shop-header-height: 78px;
+    --shop-header-top-padding: 16px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    min-width: 320px;
+    min-height: 100%;
+    background: var(--background-color);
+}
+
+body {
+    min-width: 320px;
+    min-height: 100vh;
+    min-height: 100svh;
+    margin: 0;
+    padding: 0;
+    background: var(--background-color);
+    color: #111;
+    font-family: "Roboto", sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+button {
+    font: inherit;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.shop-page {
+    width: min(100%, var(--content-max-width));
+    min-height: 100vh;
+    min-height: 100svh;
+    margin: 0 auto;
+    padding: var(--shop-header-height) var(--page-gutter) calc(150px + env(safe-area-inset-bottom));
+}
+
+.shop-header {
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    right: 0;
+    left: 0;
+    display: flex;
+    width: min(100%, var(--content-max-width));
+    min-height: var(--shop-header-height);
+    margin: 0 auto;
+    padding: var(--shop-header-top-padding) var(--page-gutter) 0;
+    align-items: flex-start;
+    justify-content: space-between;
+    background: var(--background-color);
+}
+
+.queue-number {
+    display: flex;
+    align-items: flex-end;
+    margin: 0;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.55;
+}
+
+.queue-number__value {
+    margin-left: 6px;
+    font-size: 30px;
+    line-height: 1.2;
+}
+
+.cart-button {
+    display: grid;
+    width: 44px;
+    height: 44px;
+    margin: 0 12px 0 16px;
+    padding: 4px;
+    place-items: center;
+    color: #222;
+    background: transparent;
+    border: 0;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.cart-button svg {
+    width: 32px;
+    height: 32px;
+    fill: none;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 2;
+}
+
+.cart-button:focus-visible,
+.checkout-button:focus-visible,
+.leave-queue-button:focus-visible {
+    outline: 3px solid #6c72a0;
+    outline-offset: 3px;
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(16px, 6vw, 24px);
+    margin-top: 0;
+}
+
+.product-placeholder {
+    display: block;
+    min-width: 0;
+    width: 100%;
+    aspect-ratio: 1.05;
+    background: var(--surface-placeholder);
+    object-fit: cover;
+}
+
+.shop-actions {
+    position: fixed;
+    z-index: 1;
+    right: var(--page-gutter);
+    bottom: var(--action-bottom-space);
+    left: var(--page-gutter);
+    display: flex;
+    width: auto;
+    max-width: 370px;
+    margin: 0 auto;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+}
+
+.checkout-button,
+.leave-queue-button {
+    min-height: 44px;
+    padding: 0 16px;
+    border: 0;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+}
+
+.checkout-button {
+    color: var(--primary-text-button-color);
+    background: var(--primary-button-color);
+    border-radius: 10px;
+}
+
+.leave-queue-button {
+    color: #111;
+    background: transparent;
+}
+
+@media (min-width: 640px) {
+    :root {
+        --shop-header-height: 104px;
+        --shop-header-top-padding: 28px;
+    }
+
+    .shop-page {
+        padding-bottom: 120px;
+    }
+
+    .shop-header {
+        min-height: var(--shop-header-height);
+    }
+
+    .queue-number {
+        font-size: 20px;
+    }
+
+    .queue-number__value {
+        font-size: 34px;
+    }
+
+    .products {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 24px;
+    }
+
+    .shop-actions {
+        max-width: 560px;
+        flex-direction: row;
+        gap: 16px;
+    }
+
+    .checkout-button,
+    .leave-queue-button {
+        flex: 1;
+    }
+}
+
+@media (min-width: 960px) {
+    :root {
+        --shop-header-height: 112px;
+        --shop-header-top-padding: 36px;
+    }
+
+    .shop-page {
+        padding-top: var(--shop-header-height);
+    }
+
+    .products {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 28px;
+    }
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#ffffff">
+    <title>Pagamento Pix | FlowPay</title>
+    <link rel="stylesheet" href="../src/payment-page-style.css">
+</head>
+<body>
+    <main class="payment-page">
+        <a class="back-link" href="./final-page.html">Voltar às formas de pagamento</a>
+
+        <section class="pix-content" aria-labelledby="pix-title">
+            <h1 id="pix-title">Pagamento com Pix</h1>
+            <p class="payment-description">Escaneie o QR Code com o aplicativo do seu banco.</p>
+
+            <div class="pix-qr-card">
+                <canvas
+                    id="payment-qr"
+                    class="pix-qr"
+                    width="256"
+                    height="256"
+                    role="img"
+                    aria-label="QR Code Pix demonstrativo"
+                ></canvas>
+                <p class="pix-demo-notice">
+                    QR Code demonstrativo. Nenhum pagamento real será efetuado.
+                </p>
+            </div>
+
+            <p id="payment-status" class="payment-status" role="status" aria-live="polite">
+                Gerando QR Code...
+            </p>
+
+            <button id="finish-purchase" class="finish-purchase-button" type="button">
+                Finalizar compra
+            </button>
+            <p id="finish-status" class="finish-status" role="status" aria-live="polite"></p>
+        </section>
+    </main>
+    <script type="module" src="../src/payment.js"></script>
+</body>
+</html>

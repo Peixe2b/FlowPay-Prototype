@@ -1,11 +1,107 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="theme-color" content="#ffffff">
+    <title>Forma de pagamento | FlowPay</title>
+    <link rel="stylesheet" href="../src/payment-page-style.css">
 </head>
 <body>
-    
+    <main class="payment-page">
+        <a class="back-link" href="./shop-page.html">Voltar para a loja</a>
+
+        <section class="payment-content" aria-labelledby="payment-title">
+            <h1 id="payment-title">Como deseja pagar?</h1>
+            <p class="payment-description">Escolha uma forma de pagamento para continuar.</p>
+
+            <form>
+                <fieldset class="payment-options">
+                    <legend class="visually-hidden">Forma de pagamento</legend>
+
+                    <label class="payment-option">
+                        <input type="radio" name="payment-method" value="pix">
+                        <span class="payment-option__icon" aria-hidden="true">
+                            <svg viewBox="0 0 32 32">
+                                <path d="m11 5 5 5 5-5 6 6-5 5 5 5-6 6-5-5-5 5-6-6 5-5-5-5z"></path>
+                                <path d="m11 11 5 5 5-5M11 21l5-5 5 5"></path>
+                            </svg>
+                        </span>
+                        <span class="payment-option__text">
+                            <strong>Pix</strong>
+                            <span>Pagamento instantâneo</span>
+                        </span>
+                        <span class="payment-option__radio" aria-hidden="true"></span>
+                    </label>
+
+                    <label class="payment-option">
+                        <input type="radio" name="payment-method" value="card">
+                        <span class="payment-option__icon" aria-hidden="true">
+                            <svg viewBox="0 0 32 32">
+                                <rect x="3" y="6" width="26" height="20" rx="3"></rect>
+                                <path d="M3 13h26M8 21h6"></path>
+                            </svg>
+                        </span>
+                        <span class="payment-option__text">
+                            <strong>Cartão</strong>
+                            <span>Crédito ou débito</span>
+                        </span>
+                        <span class="payment-option__radio" aria-hidden="true"></span>
+                    </label>
+
+                    <label class="payment-option">
+                        <input type="radio" name="payment-method" value="cash">
+                        <span class="payment-option__icon" aria-hidden="true">
+                            <svg viewBox="0 0 32 32">
+                                <rect x="3" y="8" width="26" height="17" rx="2"></rect>
+                                <circle cx="16" cy="16.5" r="4"></circle>
+                                <path d="M7 12c1.7 0 3-1.3 3-3M25 21c-1.7 0-3 1.3-3 3"></path>
+                            </svg>
+                        </span>
+                        <span class="payment-option__text">
+                            <strong>Dinheiro</strong>
+                            <span>Pagamento no atendimento</span>
+                        </span>
+                        <span class="payment-option__radio" aria-hidden="true"></span>
+                    </label>
+                </fieldset>
+
+                <fieldset id="card-details" class="card-details" hidden>
+                    <legend>Pagamento com cartão</legend>
+                    <div class="card-type-options">
+                        <label class="card-type-option">
+                            <input type="radio" name="card-type" value="debit">
+                            <span>Débito</span>
+                        </label>
+                        <label class="card-type-option">
+                            <input type="radio" name="card-type" value="credit">
+                            <span>Crédito</span>
+                        </label>
+                    </div>
+
+                    <div id="installment-group" class="installment-group" hidden>
+                        <label for="installments">Número de parcelas</label>
+                        <select id="installments" name="installments">
+                            <option value="">Selecione</option>
+                            <option value="1">À vista</option>
+                            <option value="2">2 parcelas</option>
+                            <option value="3">3 parcelas</option>
+                            <option value="4">4 parcelas</option>
+                            <option value="5">5 parcelas</option>
+                            <option value="6">6 parcelas</option>
+                            <option value="7">7 parcelas</option>
+                            <option value="8">8 parcelas</option>
+                            <option value="9">9 parcelas</option>
+                            <option value="10">10 parcelas</option>
+                            <option value="11">11 parcelas</option>
+                            <option value="12">12 parcelas</option>
+                        </select>
+                        <p>O valor de cada parcela será calculado ao informar o total da compra.</p>
+                    </div>
+                </fieldset>
+            </form>
+        </section>
+    </main>
+    <script type="module" src="../src/payment-method.js"></script>
 </body>
 </html>
