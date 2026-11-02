@@ -16,12 +16,14 @@
                 </div>
 
                 <div id="user-input">
-                    <label for="cpf">CPF</label>
+                    <label for="cpf-input">CPF</label>
                     <input 
                         type="text" 
                         id="cpf-input" 
                         name="cpf" 
                         placeholder="000.000.000-00" 
+                        inputmode="numeric"
+                        maxlength="14"
                         autocomplete="off"
                         required
                     >
@@ -33,6 +35,6 @@
             </div>
         </form>
     </main>
-    <script src="./main.js"></script>
+    <script type="module" src="./main.js"></script>
 </body>
 </html>
